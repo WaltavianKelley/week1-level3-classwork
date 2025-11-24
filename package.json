@@ -6,7 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "check:node": "node scripts/checkEnv.js hello-from-npm-script",
-    "dev": "live-server port --3002"
+    "dev": "live-server --port=3002",
+
+    "lint:js" : "eslint . --ext .js",
+    "lint:css" :"stylelint\"styles/**/*.css\"",
+    "lint:html" : "htmlhint . --ext . html",
+
+    "lint:js:fix" : "eslint . --ext .js",
+    "lint:css:fix" : "stylelint\"styles/**/*.css\"",
+    "lint:fix" : "npm run lint:js:fix && npm run lint:css:fix"
   },
   "repository": {
     "type": "git",
@@ -24,6 +32,10 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
-    "live-server": "^1.2.2"
+    "eslint": "^9.39.1",
+    "htmlhint": "^1.7.1",
+    "live-server": "^1.2.2",
+    "stylelint": "^16.26.0",
+    "stylelint-config-standard": "^39.0.1"
   }
 }
